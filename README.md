@@ -1,5 +1,11 @@
 # DebateX — Architecture & Design Notes
+## 🚀 Live Demo
 
+🔗 **Live Application:** [DebateX](https://debate-x-chi.vercel.app/)
+
+### Backend
+- **API:** [DebateX Backend](https://debatex-0bho.onrender.com)
+- **Health Check:** [API Health](https://debatex-0bho.onrender.com/api/health)
 DebateX is a voice-based AI debate opponent: pick a topic, take a stance, and
 argue live against an LLM that has pre-researched the opposing side. This
 document covers *why* it's built the way it is, not just how to run it. For
