@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Floor — AI Debater</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- STAGE: WELCOME -->
+  <section class="stage" id="stage-welcome">
+    <div class="crest">THE FLOOR</div>
+    <h1 class="quote" id="quote-text">"Confidence is the sound of a mind that has already fought this argument once."</h1>
+    <p class="subtitle">Step up. Pick your ground. Defend it.</p>
+    <button class="btn btn-primary" id="btn-start">Enter the floor</button>
+    <p class="setup-note">First time? See <code>README.md</code> to add your free Groq API key.</p>
+  </section>
+
+  <!-- STAGE: CATEGORY -->
+  <section class="stage hidden" id="stage-category">
+    <div class="eyebrow">01 — choose your arena</div>
+    <h2>What are we fighting about?</h2>
+    <div class="category-grid" id="category-grid"></div>
+  </section>
+
+  <!-- STAGE: WHEEL -->
+  <section class="stage hidden" id="stage-wheel">
+    <div class="eyebrow">02 — the draw</div>
+    <div class="wheel-wrap">
+      <div class="wheel" id="wheel">
+        <div class="wheel-needle"></div>
+      </div>
+    </div>
+    <div class="topic-reveal" id="topic-reveal"></div>
+  </section>
+
+  <!-- STAGE: STANCE -->
+  <section class="stage hidden" id="stage-stance">
+    <div class="eyebrow">03 — pick your side</div>
+    <h2 id="stance-topic-text"></h2>
+    <div class="stance-row">
+      <button class="btn btn-stance" data-stance="for">I'm FOR this</button>
+      <button class="btn btn-stance" data-stance="against">I'm AGAINST this</button>
+    </div>
+  </section>
+
+  <!-- STAGE: RESEARCH -->
+  <section class="stage hidden" id="stage-research">
+    <div class="eyebrow">04 — research window</div>
+    <div class="timer-display" id="research-timer">05:00</div>
+    <p class="research-status" id="research-status">Both sides are gathering evidence...</p>
+    <div class="research-grid">
+      <div class="research-panel">
+        <h3>Your notes</h3>
+        <textarea id="user-notes" placeholder="Jot down your key points, stats, and sources here..."></textarea>
+      </div>
+      <div class="research-panel">
+        <h3>Opponent status</h3>
+        <div class="ai-thinking" id="ai-thinking">
+          <div class="pulse-dot"></div> Building knowledge base...
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-secondary" id="btn-skip-research">Start debate now</button>
+  </section>
+
+  <!-- STAGE: DEBATE -->
+  <section class="stage hidden" id="stage-debate">
+    <div class="debate-header">
+      <div class="debate-topic" id="debate-topic-label"></div>
+      <div class="debate-timer" id="debate-timer">00:00</div>
+    </div>
+
+    <div class="debate-arena">
+      <div class="participant participant-user">
+        <video id="user-video" autoplay muted playsinline></video>
+        <div class="label-tag">You · <span id="user-stance-label"></span></div>
+      </div>
+
+      <div class="participant participant-ai">
+        <svg id="avatar" viewBox="0 0 200 200" class="avatar-svg">
+          <circle cx="100" cy="100" r="95" class="avatar-face"/>
+          <circle cx="68" cy="85" r="9" class="avatar-eye"/>
+          <circle cx="132" cy="85" r="9" class="avatar-eye"/>
+          <path id="avatar-brow-l" d="M50 65 Q68 58 86 65" class="avatar-brow"/>
+          <path id="avatar-brow-r" d="M114 65 Q132 58 150 65" class="avatar-brow"/>
+          <path id="avatar-mouth" d="M65 135 Q100 135 135 135" class="avatar-mouth"/>
+        </svg>
+        <div class="label-tag">Opponent · <span id="ai-stance-label"></span></div>
+        <div class="listening-indicator" id="listening-indicator">listening...</div>
+      </div>
+    </div>
+
+    <div class="transcript" id="transcript"></div>
+
+    <div class="debate-controls">
+      <button class="btn btn-mic" id="btn-mic">🎙 Hold to speak</button>
+      <button class="btn btn-secondary" id="btn-end-debate">End debate</button>
+    </div>
+  </section>
+
+  <!-- STAGE: SCORECARD -->
+  <section class="stage hidden" id="stage-scorecard">
+    <div class="eyebrow">verdict</div>
+    <h2>Scorecard</h2>
+    <div class="scorecard-box" id="scorecard-box">Generating your scorecard...</div>
+    <button class="btn btn-primary" id="btn-restart">Debate again</button>
+  </section>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

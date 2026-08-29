@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-debater-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
