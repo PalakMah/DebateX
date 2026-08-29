@@ -1,6 +1,5 @@
-# The Floor — AI Debater (MVP)
+# DebateX — AI Debate Opponent (MVP)
 https://ai-debater-seven.vercel.app/ check this out
-
 
 A local, no-paid-API-required AI debate opponent: pick a category, spin for a
 topic, take a stance, research for 5 minutes while the AI researches in
@@ -95,7 +94,7 @@ HTML).
    - `CORS_ORIGINS` = the frontend URL you'll get in step 2 below (you can
      leave this blank / come back and set it once you have that URL —
      it defaults to allowing all origins if unset)
-4. Deploy. You'll get a URL like `https://ai-debater-backend.onrender.com`.
+4. Deploy. You'll get a URL like `https://debatex-backend.onrender.com`.
    Check it's alive at `https://<your-url>/api/health`.
 
 Free tier note: Render's free web services spin down after inactivity and
@@ -110,7 +109,7 @@ standard FastAPI app, nothing here is Render-specific except `render.yaml`.
 
 1. In `frontend/config.js`, replace the URL with your live backend:
    ```js
-   window.API_BASE_URL = "https://ai-debater-backend.onrender.com";
+   window.API_BASE_URL = "https://debatex-backend.onrender.com";
    ```
 2. Go to https://app.netlify.com/drop and drag the `frontend/` folder in.
    That's it — no build step, it's static files. You'll get a URL like
