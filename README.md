@@ -1,5 +1,5 @@
 # DebateX — Architecture & Design Notes
-## 🚀 Live Demo
+## Live Demo
 
 **Live Application:** [DebateX](https://debate-x-chi.vercel.app/)
 
