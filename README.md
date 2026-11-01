@@ -1,7 +1,7 @@
 # DebateX — Architecture & Design Notes
 ## 🚀 Live Demo
 
-🔗 **Live Application:** [DebateX](https://debate-x-chi.vercel.app/)
+**Live Application:** [DebateX](https://debate-x-chi.vercel.app/)
 
 ### Backend
 - **API:** [DebateX Backend](https://debatex-0bho.onrender.com)
